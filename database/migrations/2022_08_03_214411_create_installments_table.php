@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger("financial_id");
             $table->double('value',8,2);
             $table->date('date');
-            $table->set('active',['N','S','C'])->default('N');
+            $table->char('active')->default('N');
             $table->string('image')->nullable();
             
             $table->foreign('user_id')->references("id")->on('users')->onDelete("cascade");
